@@ -26,7 +26,7 @@ Template.CommentsList.helpers({
   },
 
   user: function () {
-    var todo = this;
+    var comment = this;
     return Meteor.users.findOne({_id: todo.userId});
   },
 
