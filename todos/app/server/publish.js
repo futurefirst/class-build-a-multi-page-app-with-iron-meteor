@@ -15,7 +15,7 @@ Meteor.publish('todo', function (id) {
 
   var todo = Todos.findOne({_id: id});
   return [
-    Meteor.users.find({_id: todo.userId}, {fields: {profile: 1}}),
+    Meteor.users.find({}, {fields: {profile: 1}}),
     Todos.find({_id: id}),
     Comments.find({todoId: id}, {sort: {createdAt: -1}})
   ];
